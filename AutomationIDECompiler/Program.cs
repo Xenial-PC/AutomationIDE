@@ -5,11 +5,12 @@ namespace AutomationIDECompiler
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Compiler.Build();
-            if (Compiler.Lines.Contains("--firefox")) Compiler.BuildFireFox();
-            else if (Compiler.Lines.Contains("--chrome")) Compiler.BuildChrome();
+            var compiler = new Compiler();
+            compiler.Build();
+            if (Compiler.Lines.Contains("--firefox")) compiler.BuildFireFox();
+            else if (Compiler.Lines.Contains("--chrome")) compiler.BuildChrome();
             Console.ReadKey();
         }
     }

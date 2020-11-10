@@ -15,9 +15,10 @@ namespace AutomationIDE
 
         private async void compileBTN_Click(object sender, EventArgs e)
         {
-            await Compiler.ReadTextBoxLinesAsync(compilerTB).ConfigureAwait(true);
-            if (_fireFox) Compiler.BuildFireFox(websiteTB.Text);
-            else if (_chrome) Compiler.BuildChrome(websiteTB.Text);
+            var compiler = new Compiler();
+            await compiler.ReadTextBoxLinesAsync(compilerTB).ConfigureAwait(true);
+            if (_fireFox) compiler.BuildFireFox(websiteTB.Text);
+            else if (_chrome) compiler.BuildChrome(websiteTB.Text);
             else MessageBox.Show(@"No Browser Type Chosen!", @"Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.ServiceNotification, false);
         }
 

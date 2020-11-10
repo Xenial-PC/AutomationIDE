@@ -11,6 +11,7 @@ namespace AutomationIDELibrary.ReservedKeyWords
     public class Functions
     {
         private IWebElement _element;
+        private readonly Format _formatLine = new Format();
         #region BrowserFunctions
 
         public Task ClickAsync(string name, WebDriverWait driverWait)
@@ -68,9 +69,8 @@ namespace AutomationIDELibrary.ReservedKeyWords
 
         }
 
-        public Task BaseFunctionCheckTagAsync(out TextBox tb)
+        public Task BaseFunctionCOutputTagAsync(ref TextBox tb)
         {
-            tb = new TextBox();
             var element = _element;
             if (element.TagName == null) return Task.CompletedTask;
             tb.Text += $"Writing to tag: {element.TagName}\n";
@@ -117,33 +117,33 @@ namespace AutomationIDELibrary.ReservedKeyWords
             {
                 case string n when n.StartsWith("SendKeysByName", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 15));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.Name(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 15));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.Name(Format.AdvancedOutputOne));
                 }break;
                 case string n when n.StartsWith("SendKeysByClassName", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 19));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.ClassName(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 19));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.ClassName(Format.AdvancedOutputOne));
                 }break;
                 case string n when n.StartsWith("SendKeysById", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 12));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.Id(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 12));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.Id(Format.AdvancedOutputOne));
                 }break;
                 case string n when n.StartsWith("SendKeysByTagName", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 17));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.TagName(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 17));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.TagName(Format.AdvancedOutputOne));
                 }break;
                 case string n when n.StartsWith("SendKeysByCssSelector", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 21));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.CssSelector(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 21));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.CssSelector(Format.AdvancedOutputOne));
                 }break;
                 case string n when n.StartsWith("SendKeysByXPath", StringComparison.Ordinal):
                 {
-                    FormatMessage.FormatStringAdvanced(name.Remove(0, 15));
-                    BaseFunctionSendKeysAsync(driver, FormatMessage.AdvancedOutputTwo, By.XPath(FormatMessage.AdvancedOutputOne));
+                    _formatLine.FormatStringAdvanced(name.Remove(0, 15));
+                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.XPath(Format.AdvancedOutputOne));
                 }break;
             }
             return Task.CompletedTask;
