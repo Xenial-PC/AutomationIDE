@@ -1,0 +1,14 @@
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\chromedriver.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.exe.config
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.pdb
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDELibrary.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\WebDriver.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\SeleniumExtras.WaitHelpers.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDELibrary.pdb
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\WebDriver.xml
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csprojAssemblyReference.cache
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.CoreCompileInputs.cache
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.CopyComplete
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.pdb

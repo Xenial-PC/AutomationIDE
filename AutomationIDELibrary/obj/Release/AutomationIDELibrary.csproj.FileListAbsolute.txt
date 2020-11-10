@@ -1,0 +1,11 @@
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\AutomationIDELibrary.dll
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\AutomationIDELibrary.pdb
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\SeleniumExtras.WaitHelpers.dll
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\WebDriver.dll
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\WebDriver.xml
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\obj\Release\AutomationIDELibrary.csproj.CoreCompileInputs.cache
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\obj\Release\AutomationIDELibrary.csproj.CopyComplete
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\obj\Release\AutomationIDELibrary.dll
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\obj\Release\AutomationIDELibrary.pdb
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\obj\Release\AutomationIDELibrary.csprojAssemblyReference.cache
+D:\Xenial\VS Repos\AutomationIDE\AutomationIDELibrary\bin\Release\chromedriver.exe

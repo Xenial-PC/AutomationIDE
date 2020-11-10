@@ -1,0 +1,51 @@
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\chromedriver.exe
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\AutomationIDE.exe.config
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\AutomationIDE.exe
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\AutomationIDE.pdb
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\AutomationIDELibrary.dll
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\WebDriver.dll
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\SeleniumExtras.WaitHelpers.dll
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\AutomationIDELibrary.pdb
+D:\Xenial\VS Repos\AutomationIDE\bin\Debug\WebDriver.xml
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.csprojAssemblyReference.cache
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.AutomationIde.resources
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.Properties.Resources.resources
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.csproj.GenerateResource.cache
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.csproj.CoreCompileInputs.cache
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.csproj.CopyComplete
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.exe
+D:\Xenial\VS Repos\AutomationIDE\obj\Debug\AutomationIDE.pdb
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csprojAssemblyReference.cache
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.AutomationIde.resources
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.Properties.Resources.resources
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.GenerateResource.cache
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.CoreCompileInputs.cache
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.exe
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.pdb
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\chromedriver.exe
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.exe.config
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.exe
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.pdb
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDELibrary.dll
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\WebDriver.dll
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\SeleniumExtras.WaitHelpers.dll
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDELibrary.pdb
+E:\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\WebDriver.xml
+E:\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.CopyComplete
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDELibrary.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\WebDriver.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\SeleniumExtras.WaitHelpers.dll
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDELibrary.pdb
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\WebDriver.xml
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csprojAssemblyReference.cache
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.AutomationIde.resources
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.Properties.Resources.resources
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.GenerateResource.cache
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.CoreCompileInputs.cache
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.pdb
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\chromedriver.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.exe.config
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.exe
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\bin\Debug\AutomationIDE.pdb
+D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\obj\Debug\AutomationIDE.csproj.CopyComplete
