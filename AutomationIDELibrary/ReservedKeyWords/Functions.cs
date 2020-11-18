@@ -14,43 +14,43 @@ namespace AutomationIDELibrary.ReservedKeyWords
         private readonly Format _formatLine = new Format();
         #region BrowserFunctions
 
-        public Task ClickAsync(string name, WebDriverWait driverWait)
+        public Task ClickAsync(string elementName, WebDriverWait driverWait)
         {
-            ClickFuncAsync(name, driverWait).ConfigureAwait(true);
+            ClickFuncAsync(elementName, driverWait).ConfigureAwait(true);
             return Task.CompletedTask;
         }
 
-        public Task SendKeysAsync(string name, WebDriverWait driverWait)
+        public Task SendKeysAsync(string elementName, WebDriverWait driverWait)
         {
-            SendKeysFuncAsync(name, driverWait).ConfigureAwait(true);
+            SendKeysFuncAsync(elementName, driverWait).ConfigureAwait(true);
             return Task.CompletedTask;
         }
 
-        public Task SubmitAsync(string name, WebDriverWait driverWait)
+        public Task SubmitAsync(string elementName, WebDriverWait driverWait)
         {
-            SubmitFuncAsync(name, driverWait).ConfigureAwait(true);
+            SubmitFuncAsync(elementName, driverWait).ConfigureAwait(true);
             return Task.CompletedTask;
         }
         #endregion
         #region BaseFunctions
         private void BaseFunctionClickElementAsync(WebDriverWait driver, By @by)
         {
-            var element = driver.Until(ExpectedConditions.ElementExists(by));
-            element.Click();
+            var element = driver.Until(ExpectedConditions.ElementExists(by)); // Waits til the element exists
+            element.Click(); // Sends the click 
             _element = element;
         }
 
         private void BaseFunctionSendKeysAsync(WebDriverWait driver, string input, By @by)
         {
-            var element = driver.Until(ExpectedConditions.ElementExists(by));
-            element.SendKeys(input);
+            var element = driver.Until(ExpectedConditions.ElementExists(by)); // Waits til the element exists
+            element.SendKeys(input); // Sends the string of keys set by the user
             _element = element;
         }
 
         private void BaseFunctionSubmitAsync(WebDriverWait driver, By @by)
         {
-            var element = driver.Until(ExpectedConditions.ElementExists(by));
-            element.Submit();
+            var element = driver.Until(ExpectedConditions.ElementExists(by)); // Waits til the element exists
+            element.Submit(); // Sends *enter*
             _element = element;
         }
 
@@ -59,9 +59,12 @@ namespace AutomationIDELibrary.ReservedKeyWords
 
         }
 
-        private void BaseFunctionForLoop()
+        private void BaseFunctionLoop(int times)
         {
+            //for (int i; i < times; i++)
+            {
 
+            }
         }
 
         private void BaseFunctionIfStatement()
@@ -90,81 +93,92 @@ namespace AutomationIDELibrary.ReservedKeyWords
             return Task.CompletedTask;
         }
         #endregion
+
         #region Functions
-        private Task ClickFuncAsync(string name, WebDriverWait driver)
+        private Task ClickFuncAsync(string keyword, WebDriverWait driver)
         {
-            switch (name)
+            switch (keyword)
             {
-                case string n when n.StartsWith("ClickByName", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.Name(name.Remove(0, 12))); break;
-                case string n when n.StartsWith("ClickByClassName", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.ClassName(name.Remove(0, 16))); break;
-                case string n when n.StartsWith("ClickById", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.Id(name.Remove(0, 9))); break;
-                case string n when n.StartsWith("ClickByTagName", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.TagName(name.Remove(0, 14))); break;
-                case string n when n.StartsWith("ClickByCssSelector", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.CssSelector(name.Remove(0, 18))); break;
-                case string n when n.StartsWith("ClickByXPath", StringComparison.Ordinal):
-                    BaseFunctionClickElementAsync(driver, By.XPath(name.Remove(0, 12))); break;
+                case string l when l.StartsWith("ClickByName", StringComparison.Ordinal): // Checks if the keyword ClickByName is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.Name(keyword.Remove(0, 12))); break; // Removes everything up to the element 
+                
+                case string l when l.StartsWith("ClickByClassName", StringComparison.Ordinal): // Checks if the keyword ClickByClassName is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.ClassName(keyword.Remove(0, 16))); break;
+                
+                case string l when l.StartsWith("ClickById", StringComparison.Ordinal): // Checks if the keyword ClickById is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.Id(keyword.Remove(0, 9))); break;
+                
+                case string l when l.StartsWith("ClickByTagName", StringComparison.Ordinal): // Checks if the keyword ClickByTagName is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.TagName(keyword.Remove(0, 14))); break;
+                
+                case string l when l.StartsWith("ClickByCssSelector", StringComparison.Ordinal): // Checks if the keyword ClickByCssSelector is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.CssSelector(keyword.Remove(0, 18))); break;
+                
+                case string l when l.StartsWith("ClickByXPath", StringComparison.Ordinal): // Checks if the keyword ClickByXPath is used
+                    BaseFunctionClickElementAsync(driver: driver, by: By.XPath(keyword.Remove(0, 12))); break;
             }
             return Task.CompletedTask;
         }
 
-        private Task SendKeysFuncAsync(string name, WebDriverWait driver)
+        private Task SendKeysFuncAsync(string keyword, WebDriverWait driver)
         {
-            switch (name)
+            switch (keyword)
             {
-                case string n when n.StartsWith("SendKeysByName", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 15));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.Name(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysByName", StringComparison.Ordinal): // Checks if the keyword SendKeysByName is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 15)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input: Format.AdvancedOutputTwo, by: By.Name(Format.AdvancedOutputOne));
                 }break;
-                case string n when n.StartsWith("SendKeysByClassName", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 19));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.ClassName(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysByClassName", StringComparison.Ordinal): // Checks if the keyword SendKeysByClassName is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 19)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input:Format.AdvancedOutputTwo, by: By.ClassName(Format.AdvancedOutputOne));
                 }break;
-                case string n when n.StartsWith("SendKeysById", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 12));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.Id(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysById", StringComparison.Ordinal): // Checks if the keyword SendKeysById is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 12)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input: Format.AdvancedOutputTwo, by: By.Id(Format.AdvancedOutputOne));
                 }break;
-                case string n when n.StartsWith("SendKeysByTagName", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 17));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.TagName(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysByTagName", StringComparison.Ordinal): // Checks if the keyword SendKeysByTagName is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 17)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input: Format.AdvancedOutputTwo, by: By.TagName(Format.AdvancedOutputOne));
                 }break;
-                case string n when n.StartsWith("SendKeysByCssSelector", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 21));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.CssSelector(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysByCssSelector", StringComparison.Ordinal): // Checks if the keyword SendKeysByCssSelector is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 21)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input: Format.AdvancedOutputTwo, by: By.CssSelector(Format.AdvancedOutputOne));
                 }break;
-                case string n when n.StartsWith("SendKeysByXPath", StringComparison.Ordinal):
-                {
-                    _formatLine.FormatStringAdvanced(name.Remove(0, 15));
-                    BaseFunctionSendKeysAsync(driver, Format.AdvancedOutputTwo, By.XPath(Format.AdvancedOutputOne));
+                case string l when l.StartsWith("SendKeysByXPath", StringComparison.Ordinal): // Checks if the keyword SendKeysByXPath is used
+                    {
+                    _formatLine.FormatStringAdvanced(keyword.Remove(0, 15)); // Formats the line using the advanced format version
+                    BaseFunctionSendKeysAsync(driver: driver, input: Format.AdvancedOutputTwo, by: By.XPath(Format.AdvancedOutputOne));
                 }break;
             }
             return Task.CompletedTask;
         }
 
-        private Task SubmitFuncAsync(string name, WebDriverWait driver)
+        private Task SubmitFuncAsync(string keyword, WebDriverWait driver)
         {
-            switch (name)
+            switch (keyword)
             {
-                case string n when n.StartsWith("SubmitByName", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.Name(name.Remove(0, 13))); break;
-                case string n when n.StartsWith("SubmitByClassName", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.ClassName(name.Remove(0, 16))); break;
-                case string n when n.StartsWith("SubmitById", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.Id(name.Remove(0, 10))); break;
-                case string n when n.StartsWith("SubmitByTagName", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.TagName(name.Remove(0, 15))); break;
-                case string n when n.StartsWith("SubmitByCssSelector", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.CssSelector(name.Remove(0, 19))); break;
-                case string n when n.StartsWith("SubmitByXPath", StringComparison.Ordinal):
-                    BaseFunctionSubmitAsync(driver, By.XPath(name.Remove(0, 12))); break;
+                case string l when l.StartsWith("SubmitByName", StringComparison.Ordinal): // Checks if the keyword SubmitByName is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.Name(keyword.Remove(0, 13))); break;
+
+                case string l when l.StartsWith("SubmitByClassName", StringComparison.Ordinal): // Checks if the keyword SubmitByClassName is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.ClassName(keyword.Remove(0, 16))); break;
+
+                case string l when l.StartsWith("SubmitById", StringComparison.Ordinal): // Checks if the keyword SubmitById is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.Id(keyword.Remove(0, 10))); break;
+
+                case string l when l.StartsWith("SubmitByTagName", StringComparison.Ordinal): // Checks if the keyword SubmitByTagName is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.TagName(keyword.Remove(0, 15))); break;
+
+                case string l when l.StartsWith("SubmitByCssSelector", StringComparison.Ordinal): // Checks if the keyword SubmitByCssSelector is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.CssSelector(keyword.Remove(0, 19))); break;
+
+                case string l when l.StartsWith("SubmitByXPath", StringComparison.Ordinal): // Checks if the keyword SubmitByXPath is used
+                    BaseFunctionSubmitAsync(driver: driver, by: By.XPath(keyword.Remove(0, 12))); break;
             }
             return Task.CompletedTask;
         }

@@ -20,23 +20,21 @@ namespace AutomationIDELibrary.Compiler
 
         public void BuildFireFox(string webpage = null)
         {
-            var compiler = new Compiler();
-            compiler.StartFireFoxDriversAsync(webpage);
+            new Compiler().StartFireFoxDriversAsync(webpage); // Creates a new compiler then does the set script
         }
 
         public void BuildChrome(string webpage = null)
         {
-            var compiler = new Compiler();
-            compiler.StartChromeDriversAsync(webpage);
+            new Compiler().StartChromeDriversAsync(webpage); // Creates a new compiler then does the set script
         }
 
-        public void Build()
+        public void ReadScript()
         {
-            if (!Directory.Exists("Project")) return;
-            foreach (var file in Directory.GetFiles("Project"))
+            if (!Directory.Exists("Project")) return; // Checks if the project directory exists 
+            foreach (var file in Directory.GetFiles("Project")) // Gets all files in the directory Project
             {
-                if (!file.Contains(".AL")) continue;
-                foreach (var line in File.ReadAllLines(file)) Lines.Add(line);
+                if (!file.Contains(".AL")) continue; // Skips over files that do not have the extenstion name .AL
+                foreach (var line in File.ReadAllLines(file)) Lines.Add(line); // Reads all lines then adds the lines to the compiler line list
             }
         }
 
@@ -45,7 +43,7 @@ namespace AutomationIDELibrary.Compiler
             var options = new ChromeOptions();
             ChromeDriver = new ChromeDriver(options);
             var chromeDriverWait = new WebDriverWait(ChromeDriver, TimeSpan.FromSeconds(15));
-            BaseDriversTask(ChromeDriver, chromeDriverWait, chromeOptions: options, webpage: webpage);
+            BaseDriversTask(driver:ChromeDriver, webDriverWait:chromeDriverWait, chromeOptions:options, webpage: webpage);
             return Task.CompletedTask;
         }
 
@@ -54,22 +52,25 @@ namespace AutomationIDELibrary.Compiler
             var options = new FirefoxOptions();
             FireFoxDriver = new FirefoxDriver(options);
             var fireFoxDriverWait = new WebDriverWait(FireFoxDriver, TimeSpan.FromSeconds(15));
-            BaseDriversTask(FireFoxDriver, fireFoxDriverWait, options, webpage: webpage);
+            BaseDriversTask(driver:FireFoxDriver, webDriverWait:fireFoxDriverWait, firefoxOptions:options, webpage: webpage);
             return Task.CompletedTask;
         }
 
         public Task BaseDriversTask(IWebDriver driver, WebDriverWait webDriverWait, FirefoxOptions firefoxOptions = null, ChromeOptions chromeOptions = null, string webpage = null)
         {
-            Lines.ForEach(line => { if (line.StartsWith("--target", StringComparison.Ordinal)) webpage = line.Remove(0, 8); });
-            if (Lines.Contains("--headless")) 
+            // Checks if the first line has the target webpage
+            if (Lines[0].StartsWith("--target", StringComparison.Ordinal)) webpage = Lines[0].Remove(0, 8);
+            if (Lines.Contains("--headless")) // Checks if the script has the arguments headless
             {
                 firefoxOptions?.AddArguments("--headless");
                 chromeOptions?.AddArguments("--headless");
             }
-            if (Lines.Contains("--noDispose")) _dispose = false;
-            var function = new Functions();
-            driver.Navigate().GoToUrl(webpage);
-            foreach (var line in Lines)
+
+            if (Lines.Contains("--noDispose")) _dispose = false; // Disposes the script after it is ran
+            driver.Navigate().GoToUrl(webpage); // goes to the webpage stated at the beginning of the script 
+
+            var function = new Functions(); // The defined functions ran by the keywords
+            foreach (var line in Lines) // Checks each line for the defined keywords used by functions
             {
                 switch (line)
                 {
@@ -78,14 +79,15 @@ namespace AutomationIDELibrary.Compiler
                     case string l when l.Contains("Submit"): function.SubmitAsync(line, webDriverWait); break;
                 }
             }
-            Lines.RemoveRange(0, Lines.Count);
-            if (_dispose) driver.Dispose();
+
+            Lines.RemoveRange(0, Lines.Count); // Clears the list so the script can be ran again
+            if (_dispose) driver.Dispose(); // Disposes only if the script says to dispose
             return Task.CompletedTask;
         }
 
         public Task ReadTextBoxLinesAsync(TextBox textBox)
         {
-            foreach (var line in textBox.Lines) Lines.Add(line);
+            foreach (var line in textBox.Lines) Lines.Add(line); //Adds each line to the compiler line list
             return Task.CompletedTask;
         }
     }

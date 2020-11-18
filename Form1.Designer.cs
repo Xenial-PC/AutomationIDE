@@ -206,7 +206,7 @@
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
             this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closeToolStripMenuItem.Text = "Exit";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -231,14 +231,14 @@
             this.chromeToolStripMenuItem.Name = "chromeToolStripMenuItem";
             this.chromeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.chromeToolStripMenuItem.Text = "Chrome";
-            this.chromeToolStripMenuItem.Click += new System.EventHandler(this.chromeToolStripMenuItem_Click);
+            this.chromeToolStripMenuItem.Click += new System.EventHandler(this.ChromeToolStripMenuItem_Click);
             // 
             // firefoxToolStripMenuItem
             // 
             this.firefoxToolStripMenuItem.Name = "firefoxToolStripMenuItem";
             this.firefoxToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.firefoxToolStripMenuItem.Text = "Firefox";
-            this.firefoxToolStripMenuItem.Click += new System.EventHandler(this.firefoxToolStripMenuItem_Click);
+            this.firefoxToolStripMenuItem.Click += new System.EventHandler(this.FirefoxToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
