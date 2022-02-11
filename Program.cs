@@ -16,7 +16,7 @@ namespace AutomationIDE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutomationIde());
+            Application.Run(new AutomationIDEForm());
         }
     }
 }

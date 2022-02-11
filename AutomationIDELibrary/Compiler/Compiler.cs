@@ -20,21 +20,21 @@ namespace AutomationIDELibrary.Compiler
 
         public void BuildFireFox(string webpage = null)
         {
-            new Compiler().StartFireFoxDriversAsync(webpage); // Creates a new compiler then does the set script
+            new Compiler().StartFireFoxDriversAsync(webpage);
         }
 
         public void BuildChrome(string webpage = null)
         {
-            new Compiler().StartChromeDriversAsync(webpage); // Creates a new compiler then does the set script
+            new Compiler().StartChromeDriversAsync(webpage);
         }
 
         public void ReadScript()
         {
-            if (!Directory.Exists("Project")) return; // Checks if the project directory exists 
-            foreach (var file in Directory.GetFiles("Project")) // Gets all files in the directory Project
+            if (!Directory.Exists("Project")) return;
+            foreach (var file in Directory.GetFiles("Project"))
             {
-                if (!file.Contains(".AL")) continue; // Skips over files that do not have the extenstion name .AL
-                foreach (var line in File.ReadAllLines(file)) Lines.Add(line); // Reads all lines then adds the lines to the compiler line list
+                if (!file.Contains(".AL")) continue;
+                foreach (var line in File.ReadAllLines(file)) Lines.Add(line);
             }
         }
 
@@ -58,36 +58,37 @@ namespace AutomationIDELibrary.Compiler
 
         public Task BaseDriversTask(IWebDriver driver, WebDriverWait webDriverWait, FirefoxOptions firefoxOptions = null, ChromeOptions chromeOptions = null, string webpage = null)
         {
-            // Checks if the first line has the target webpage
-            if (Lines[0].StartsWith("--target", StringComparison.Ordinal)) webpage = Lines[0].Remove(0, 8);
-            if (Lines.Contains("--headless")) // Checks if the script has the arguments headless
+            if (webpage == null)
+                if (Lines[0].StartsWith("--target", StringComparison.Ordinal)) webpage = Lines[0].Remove(0, 8);
+            if (Lines.Contains("--headless"))
             {
                 firefoxOptions?.AddArguments("--headless");
                 chromeOptions?.AddArguments("--headless");
             }
 
-            if (Lines.Contains("--noDispose")) _dispose = false; // Disposes the script after it is ran
-            driver.Navigate().GoToUrl(webpage); // goes to the webpage stated at the beginning of the script 
+            if (Lines.Contains("--noDispose")) _dispose = false; 
+            driver.Navigate().GoToUrl(webpage);
 
-            var function = new Functions(); // The defined functions ran by the keywords
-            foreach (var line in Lines) // Checks each line for the defined keywords used by functions
+            var function = new Functions();
+            foreach (var line in Lines)
             {
-                switch (line)
-                {
-                    case string l when l.Contains("Click"): function.ClickAsync(line, webDriverWait); break;
-                    case string l when l.Contains("SendKeys"): function.SendKeysAsync(line, webDriverWait); break;
-                    case string l when l.Contains("Submit"): function.SubmitAsync(line, webDriverWait); break;
-                }
+                if (line.Contains("Click")) function.ClickAsync(line, webDriverWait);
+                else if (line.Contains("SendKeys")) function.SendKeysAsync(line, webDriverWait);
+                else if (line.Contains("Submit")) function.SubmitAsync(line, webDriverWait);
+                else if (line.Contains("Redirect")) function.RedirectAsync(line, driver); 
+                else if (line.Contains("JScript")) function.InjectJavaScriptAsync(line, driver);
+                else if (line.Contains("Sleep")) function.SleepAsync(line);
+                else if (line.Contains("Message")) function.MessageBoxAsync(line);
             }
 
-            Lines.RemoveRange(0, Lines.Count); // Clears the list so the script can be ran again
-            if (_dispose) driver.Dispose(); // Disposes only if the script says to dispose
+            Lines.RemoveRange(0, Lines.Count);
+            if (_dispose) driver.Dispose();
             return Task.CompletedTask;
         }
 
         public Task ReadTextBoxLinesAsync(TextBox textBox)
         {
-            foreach (var line in textBox.Lines) Lines.Add(line); //Adds each line to the compiler line list
+            foreach (var line in textBox.Lines) Lines.Add(line);
             return Task.CompletedTask;
         }
     }

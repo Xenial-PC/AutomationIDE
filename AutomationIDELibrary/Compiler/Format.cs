@@ -15,8 +15,8 @@ namespace AutomationIDELibrary.Compiler
 
         public void FormatString(int commandLength, string input)
         {
-            var msg = input.Substring(input.IndexOf(@":", StringComparison.Ordinal)); // Starts a new string at the index of ; << and makes that the new starting point /0
-            msg = msg.Remove(0, commandLength); // removes the ;command + the space
+            var msg = input.Substring(input.IndexOf(@":", StringComparison.Ordinal));
+            msg = msg.Remove(0, commandLength);
 
             _msg = msg;
             Output = msg;
@@ -29,11 +29,11 @@ namespace AutomationIDELibrary.Compiler
             var msg = _msg;
             var message = msg.Remove(msg.IndexOf(",", StringComparison.Ordinal), input.Substring(input.IndexOf(",", StringComparison.Ordinal)).Length);
 
-            msg = input.Substring(input.IndexOf(",", StringComparison.Ordinal)); // Starts a new string at the index of , << /0
-            var times = int.Parse(msg.Remove(0, 2)); // Removes the space and only uses the numbers in the string
+            msg = input.Substring(input.IndexOf(",", StringComparison.Ordinal));
+            var times = int.Parse(msg.Remove(0, 2));
 
-            AdvancedMessage = message; // sets the global message to this output
-            AdvancedTimes = times; // sets the global times to this output
+            AdvancedMessage = message;
+            AdvancedTimes = times;
         }
 
         public void FormatStringInt(int commandLength, string input)
@@ -43,26 +43,26 @@ namespace AutomationIDELibrary.Compiler
             var msg = _msg;
             var min = int.Parse(msg.Remove(msg.IndexOf(",", StringComparison.Ordinal), input.Substring(input.IndexOf(",", StringComparison.Ordinal)).Length));
 
-            msg = input.Substring(input.IndexOf(",", StringComparison.Ordinal)); // Starts a new string at the index of , << /0
-            var max = int.Parse(msg.Remove(0, 2)); // Removes the space and only uses the numbers in the string
+            msg = input.Substring(input.IndexOf(",", StringComparison.Ordinal));
+            var max = int.Parse(msg.Remove(0, 2));
 
-            IntMin = min; // sets the global min value to this output
-            IntMax = max; // sets the global max value to this output
+            IntMin = min;
+            IntMax = max;
         }
 
         public void FormatStringAdvanced(string input)
         {
             // inputOne:inputTwo
-            var outputOneInput = input; // Saves the initial input
+            var outputOneInput = input;
             var outputOne = outputOneInput.Remove(outputOneInput.IndexOf(":", StringComparison.Ordinal),
                 outputOneInput.Substring(outputOneInput.IndexOf(":", StringComparison.Ordinal)).Length);
 
-            var outputTwoInput = input; // Saves the initial input
-            var outputTwo = outputTwoInput.Substring(outputTwoInput.IndexOf(":", StringComparison.Ordinal)); // Starts a new string at the index of : << /0
-            outputTwo = outputTwo.Remove(0, 1); // Removes the : and only uses the last half of the output in the string
+            var outputTwoInput = input;
+            var outputTwo = outputTwoInput.Substring(outputTwoInput.IndexOf(":", StringComparison.Ordinal));
+            outputTwo = outputTwo.Remove(0, 1);
 
-            AdvancedOutputOne = outputOne; // sets the global output 
-            AdvancedOutputTwo = outputTwo; // sets the global output
+            AdvancedOutputOne = outputOne;
+            AdvancedOutputTwo = outputTwo;
         }
     }
 }
