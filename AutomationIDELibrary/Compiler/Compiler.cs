@@ -7,6 +7,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
+using System.Linq;
 using OpenQA.Selenium;
 
 namespace AutomationIDELibrary.Compiler
@@ -58,27 +59,32 @@ namespace AutomationIDELibrary.Compiler
 
         public Task BaseDriversTask(IWebDriver driver, WebDriverWait webDriverWait, FirefoxOptions firefoxOptions = null, ChromeOptions chromeOptions = null, string webpage = null)
         {
+            var targetIndex = Lines.IndexOf(Lines.FirstOrDefault(l => l.StartsWith("--target")));
             if (webpage == null)
-                if (Lines[0].StartsWith("--target", StringComparison.Ordinal)) webpage = Lines[0].Remove(0, 8);
-            if (Lines.Contains("--headless"))
+                if (targetIndex != -1 && Lines[targetIndex].StartsWith("--target", StringComparison.Ordinal)) webpage = Lines[targetIndex].Remove(0, 8);
+
+            var headlessIndex = Lines.IndexOf(Lines.FirstOrDefault(l => l.StartsWith("--headless")));
+            if (headlessIndex != -1 && Lines[headlessIndex].StartsWith("--headless", StringComparison.Ordinal))
             {
                 firefoxOptions?.AddArguments("--headless");
                 chromeOptions?.AddArguments("--headless");
             }
 
-            if (Lines.Contains("--noDispose")) _dispose = false; 
+            var noDisposeIndex = Lines.IndexOf(Lines.FirstOrDefault(l => l.StartsWith("--noDispose")));
+            if (noDisposeIndex != -1 && Lines[noDisposeIndex].StartsWith("--noDispose", StringComparison.Ordinal)) _dispose = false; 
             driver.Navigate().GoToUrl(webpage);
 
             var function = new Functions();
             foreach (var line in Lines)
             {
-                if (line.Contains("Click")) function.ClickAsync(line, webDriverWait);
-                else if (line.Contains("SendKeys")) function.SendKeysAsync(line, webDriverWait);
-                else if (line.Contains("Submit")) function.SubmitAsync(line, webDriverWait);
-                else if (line.Contains("Redirect")) function.RedirectAsync(line, driver); 
-                else if (line.Contains("JScript")) function.InjectJavaScriptAsync(line, driver);
-                else if (line.Contains("Sleep")) function.SleepAsync(line);
-                else if (line.Contains("Message")) function.MessageBoxAsync(line);
+                if (line.Contains("Click")) _ = function.ClickAsync(line, webDriverWait);
+                else if (line.Contains("SendKeys")) _ = function.SendKeysAsync(line, webDriverWait);
+                else if (line.Contains("Submit")) _ = function.SubmitAsync(line, webDriverWait);
+                else if (line.Contains("Redirect")) _ = function.RedirectAsync(line, driver); 
+                else if (line.Contains("JScript")) _ = function.InjectJavaScriptAsync(line, driver);
+                else if (line.Contains("P:JScript")) _ = function.InjectJavaScriptAsync(line, driver);
+                else if (line.Contains("Sleep")) _ = function.SleepAsync(line);
+                else if (line.Contains("Message")) _ = function.MessageBoxAsync(line);
             }
 
             Lines.RemoveRange(0, Lines.Count);

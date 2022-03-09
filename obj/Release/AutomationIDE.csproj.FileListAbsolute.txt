@@ -15,3 +15,20 @@ D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.csproj.CopyComplete
 D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.exe
 D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.pdb
 D:\Xenial\VS Repos\AutomationIDE\bin\Release\chromedriver.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\chromedriver.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.exe.config
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDELibrary.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\WebDriver.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\SeleniumExtras.WaitHelpers.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDELibrary.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.AssemblyReference.cache
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.AutomationIDEForm.resources
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.DocumentationPage.resources
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.Properties.Resources.resources
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.GenerateResource.cache
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.CoreCompileInputs.cache
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.CopyComplete
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.pdb

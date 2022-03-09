@@ -12,3 +12,16 @@ D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\D
 D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.CopyComplete
 D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.exe
 D:\Backup of drive\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\chromedriver.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.exe.config
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDECompiler.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDELibrary.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\WebDriver.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\SeleniumExtras.WaitHelpers.dll
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\bin\Debug\AutomationIDELibrary.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.AssemblyReference.cache
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.CoreCompileInputs.cache
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.csproj.CopyComplete
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.exe
+F:\VSRepos\VSStudio\C#\AutomationIDE\AutomationIDECompiler\obj\Debug\AutomationIDECompiler.pdb

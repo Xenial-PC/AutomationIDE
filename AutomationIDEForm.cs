@@ -12,8 +12,6 @@ namespace AutomationIDE
         public AutomationIDEForm()
         {
             InitializeComponent();
-            var console = new TextBoxWriter(ConsoleTB);
-            Console.SetOut(console);
         }
 
         private void compileBTN_Click(object sender, EventArgs e)

@@ -1,11 +1,10 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutomationIDELibrary.Compiler;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -114,17 +113,18 @@ namespace AutomationIDELibrary.ReservedKeyWords
 
         }
 
-        public Task BaseFunctionCOutputTagAsync(ref TextBox tb)
+        public Task BaseFunctionOutputTagAsync(ref TextBox tb)
         {
             var element = _element;
             if (element.TagName == null) return Task.CompletedTask;
-            tb.Text += $"Writing to tag: {element.TagName}\n";
+            tb.Text += $@"Writing to tag: {element.TagName}\n";
             return Task.CompletedTask;
         }
 
-        private Task BaseFunctionInnerTextAsync(IWebElement element)
+        private Task BaseFunctionInnerTextAsync(IWebDriver driver, IWebElement element)
         {
-            Console.WriteLine(element.Text);
+            var js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript($"console.log({element.Text})");
             return Task.CompletedTask;
         }
 
@@ -224,6 +224,8 @@ namespace AutomationIDELibrary.ReservedKeyWords
         {
             if (keyword.StartsWith("JScript", StringComparison.Ordinal))
                 BaseFunctionInjectJavaScript(driver, keyword.Remove(0, 7));
+            else if (keyword.StartsWith("P:JScript", StringComparison.Ordinal))
+                BaseFunctionInjectJavaScript(driver, File.ReadAllText(keyword.Remove(0, 9)));
             return Task.CompletedTask;
         }
 
