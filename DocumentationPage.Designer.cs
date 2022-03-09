@@ -49,18 +49,20 @@ namespace AutomationIDE
             System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("SendKeysByCssSelector");
             System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("SendKeysByClassName");
             System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("Redirect");
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("--noDispose");
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("Message");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("JScript");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("--headless");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("--firefox");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("ClickByXPath");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("ClickByTagName");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("ClickByName");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("ClickById");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("ClickByCssSelector");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("ClickByClassName");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("--chrome");
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem("P:JScript");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("--noDispose");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("Message");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("JScript");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("--hideCMD");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("--headless");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("--firefox");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("ClickByXPath");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("ClickByTagName");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("ClickByName");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("ClickById");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("ClickByCssSelector");
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("ClickByClassName");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("--chrome");
             this.panel1 = new System.Windows.Forms.Panel();
             this.KeywordsListBox = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
@@ -122,18 +124,20 @@ namespace AutomationIDE
             listViewItem13.Group = listViewGroup3;
             listViewItem14.Group = listViewGroup3;
             listViewItem15.Group = listViewGroup5;
-            listViewItem16.Group = listViewGroup1;
-            listViewItem17.Group = listViewGroup5;
+            listViewItem16.Group = listViewGroup5;
+            listViewItem17.Group = listViewGroup1;
             listViewItem18.Group = listViewGroup5;
-            listViewItem19.Group = listViewGroup1;
+            listViewItem19.Group = listViewGroup5;
             listViewItem20.Group = listViewGroup1;
-            listViewItem21.Group = listViewGroup2;
-            listViewItem22.Group = listViewGroup2;
+            listViewItem21.Group = listViewGroup1;
+            listViewItem22.Group = listViewGroup1;
             listViewItem23.Group = listViewGroup2;
             listViewItem24.Group = listViewGroup2;
             listViewItem25.Group = listViewGroup2;
             listViewItem26.Group = listViewGroup2;
-            listViewItem27.Group = listViewGroup1;
+            listViewItem27.Group = listViewGroup2;
+            listViewItem28.Group = listViewGroup2;
+            listViewItem29.Group = listViewGroup1;
             this.KeywordsListBox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
             listViewItem2,
@@ -161,7 +165,9 @@ namespace AutomationIDE
             listViewItem24,
             listViewItem25,
             listViewItem26,
-            listViewItem27});
+            listViewItem27,
+            listViewItem28,
+            listViewItem29});
             this.KeywordsListBox.Location = new System.Drawing.Point(3, 34);
             this.KeywordsListBox.MultiSelect = false;
             this.KeywordsListBox.Name = "KeywordsListBox";
