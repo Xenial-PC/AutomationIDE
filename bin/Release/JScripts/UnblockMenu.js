@@ -33,9 +33,8 @@ document.addEventListener('keydown', function(event)
 			}
 			
 			alert('Login Successful');
-			document.body.innerHTML = '<head> <button type="button" onclick="' + unblockAllButtonScript + '">Unblock All!</button> </head>';
+			document.body.innerHTML = '<head> <button type="button" onclick="' + unblockAllButtonScript + '">Grant Admin Access!</button> </head>';
 		}); 
-		//document.body.innerHTML += '<head> <button type="button" onclick="' + unblockAllButtonScript + '">Unblock All!</button> </head>';
 	}
     else if(event.keyCode == 39) 
 	{

@@ -17,6 +17,7 @@ namespace AutomationIDELibrary.Compiler
         public static List<string> Lines = new List<string>();
         public FirefoxDriver FireFoxDriver;
         public ChromeDriver ChromeDriver;
+        public ChromeDriverService ChromeDriverService;
         private bool _dispose = true;
 
         public void BuildFireFox(string webpage = null)
@@ -41,8 +42,13 @@ namespace AutomationIDELibrary.Compiler
 
         public Task StartChromeDriversAsync(string webpage = null)
         {
+            ChromeDriverService = ChromeDriverService.CreateDefaultService();
+            var hideCmdIndex = Lines.IndexOf(Lines.FirstOrDefault(l => l.StartsWith("--hideCMD")));
+            if (hideCmdIndex != -1 && Lines[hideCmdIndex].StartsWith("--hideCMD", StringComparison.Ordinal))
+                ChromeDriverService.HideCommandPromptWindow = true;
+
             var options = new ChromeOptions();
-            ChromeDriver = new ChromeDriver(options);
+            ChromeDriver = new ChromeDriver(ChromeDriverService, options);
             var chromeDriverWait = new WebDriverWait(ChromeDriver, TimeSpan.FromSeconds(15));
             BaseDriversTask(driver:ChromeDriver, webDriverWait:chromeDriverWait, chromeOptions:options, webpage: webpage);
             return Task.CompletedTask;
