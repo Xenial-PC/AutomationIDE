@@ -3,7 +3,7 @@ var cachedDocument = document.body.innerHTML;
 var cachedBackgroundColor = document.body.style.backgroundColor;
 var cachedBackgroundImage = document.body.style.backgroundImage;
 
-var unblockAllButtonScript = "alert('Unblocking All Items On Your PC!'); location.href = 'https://granvillecsd.org/';";
+var unblockAllButtonScript = "alert('Unblocking All Items On Your PC!'); location.href = 'https://jrsr.granvillecsd.org/';";
 
 document.addEventListener('keydown', function(event) 
 {
@@ -33,7 +33,7 @@ document.addEventListener('keydown', function(event)
 			}
 			
 			alert('Login Successful');
-			document.body.innerHTML = '<head> <button type="button" onclick="' + unblockAllButtonScript + '">Grant Admin Access!</button> </head>';
+			document.body.innerHTML = '<head> <button id="LoggedIn" type="button" onclick="' + unblockAllButtonScript + '">Grant Admin Access!</button> </head>';
 		}); 
 	}
     else if(event.keyCode == 39) 

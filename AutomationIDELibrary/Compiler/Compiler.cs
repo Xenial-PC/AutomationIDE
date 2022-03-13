@@ -20,6 +20,18 @@ namespace AutomationIDELibrary.Compiler
         public ChromeDriverService ChromeDriverService;
         private bool _dispose = true;
 
+        private static Compiler _instance;
+
+        public static Compiler GetInstance()
+        {
+            var creator = _instance;
+            if (creator != null)
+            {
+                return creator;
+            }
+            return (_instance = new Compiler());
+        }
+
         public void BuildFireFox(string webpage = null)
         {
             new Compiler().StartFireFoxDriversAsync(webpage);
@@ -89,6 +101,8 @@ namespace AutomationIDELibrary.Compiler
                 else if (line.Contains("Redirect")) _ = function.RedirectAsync(line, driver); 
                 else if (line.Contains("JScript")) _ = function.InjectJavaScriptAsync(line, driver);
                 else if (line.Contains("P:JScript")) _ = function.InjectJavaScriptAsync(line, driver);
+                else if (line.Contains("CSScript")) function.BaseFunctionRunCSScriptAsync("public void Main() { Console.WriteLine(); }");
+                else if (line.Contains("P:CSScript")) return Task.CompletedTask;
                 else if (line.Contains("Sleep")) _ = function.SleepAsync(line);
                 else if (line.Contains("Message")) _ = function.MessageBoxAsync(line);
             }

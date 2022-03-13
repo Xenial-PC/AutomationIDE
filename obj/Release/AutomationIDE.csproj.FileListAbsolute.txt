@@ -15,14 +15,9 @@ D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.csproj.CopyComplete
 D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.exe
 D:\Xenial\VS Repos\AutomationIDE\obj\Release\AutomationIDE.pdb
 D:\Xenial\VS Repos\AutomationIDE\bin\Release\chromedriver.exe
-F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\chromedriver.exe
 F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.exe.config
 F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.exe
 F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDE.pdb
-F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDELibrary.dll
-F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\WebDriver.dll
-F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\SeleniumExtras.WaitHelpers.dll
-F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\AutomationIDELibrary.pdb
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.AssemblyReference.cache
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.AutomationIDEForm.resources
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.DocumentationPage.resources
@@ -32,3 +27,27 @@ F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.CoreCompil
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.CopyComplete
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.exe
 F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.pdb
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\CSScriptLibrary.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.CodeAnalysis.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.CodeAnalysis.CSharp.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.CodeAnalysis.CSharp.Scripting.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.CodeAnalysis.Scripting.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Microsoft.Extensions.DependencyModel.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Newtonsoft.Json.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\Selenium.WebDriver.Extensions.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Buffers.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Collections.Immutable.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Diagnostics.DiagnosticSource.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Memory.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Numerics.Vectors.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Reflection.Metadata.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Text.Encoding.CodePages.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Text.Encodings.Web.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Text.Json.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.Threading.Tasks.Extensions.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\System.ValueTuple.xml
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.exe.config
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.GeneratedMSBuildEditorConfig.editorconfig
+F:\VSRepos\VSStudio\C#\AutomationIDE\obj\Release\AutomationIDE.csproj.Fody.CopyLocal.cache

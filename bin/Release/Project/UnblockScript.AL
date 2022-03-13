@@ -1,5 +1,5 @@
 --target https://studentportal-neric.eschooldata.com/Login.aspx?ReturnUrl=%2fgranvillecsd
 --chrome
---noDispose 
+--noDispose
 
-P:JScript F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\JScripts\UnblockMenu.js
+P:CSScript F:\VSRepos\VSStudio\C#\AutomationIDE\bin\Release\CSScripts\UnblockAll.cs

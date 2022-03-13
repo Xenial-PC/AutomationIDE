@@ -7,6 +7,7 @@ using AutomationIDELibrary.Compiler;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using CSScriptLibrary;
 
 namespace AutomationIDELibrary.ReservedKeyWords
 {
@@ -14,6 +15,8 @@ namespace AutomationIDELibrary.ReservedKeyWords
     {
         private IWebElement _element;
         private readonly Format _formatLine = new Format();
+        public dynamic Script;
+
         #region BrowserFunctions
         public Task ClickAsync(string elementName, WebDriverWait driverWait)
         {
@@ -138,6 +141,38 @@ namespace AutomationIDELibrary.ReservedKeyWords
         private Task BaseFunctionMessageBoxAsync(string message)
         {
             MessageBox.Show(message);
+            return Task.CompletedTask;
+        }
+
+        public Task BaseFunctionRunCSScriptAsync(string script)
+        {
+            CSScript.GlobalSettings.AutoClass_DecorateAsCS6 = true;
+            CSScript.AssemblyResolvingEnabled = true;
+            CSScript.EvaluatorConfig.Engine = EvaluatorEngine.Roslyn;
+
+            var code = 
+                $@"
+            //css_reference {Directory.GetCurrentDirectory()}\Dlls\AutomationIDELibrary.dll;
+            //css_reference {Directory.GetCurrentDirectory()}\Dlls\SeleniumExtras.WaitHelpers.dll;
+            //css_reference {Directory.GetCurrentDirectory()}\Dlls\WebDriver.dll;
+            
+            using AutomationIDELibrary.Compiler;
+            using OpenQA.Selenium;
+            using OpenQA.Selenium.Support.UI;
+            using SeleniumExtras.WaitHelpers;
+            {script}
+            ";
+
+            var scriptAssembly = CSScript.RoslynEvaluator.LoadCode(CSScriptLib.CSScript.WrapMethodToAutoClass(code, false, false));
+            Script = scriptAssembly;
+
+            Script.Main();
+            return Task.CompletedTask;
+        }
+
+        private Task BaseFunctionRunCSScriptFromPathAsync(string script)
+        {
+
             return Task.CompletedTask;
         }
         #endregion
